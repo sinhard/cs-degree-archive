@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css"><link rel="stylesheet" href="css/L.Control.Locate.min.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <link rel="stylesheet" href="css/MarkerCluster.css">
+        <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+        <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script><script src="js/L.Control.Locate.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="js/leaflet-control-geocoder.Geocoder.js"></script>
+        <script src="js/leaflet.markercluster.js"></script>
+        <script src="data/eastern_province_installations_2.js"></script>
+        <script src="data/northern_province_installation_3.js"></script>
+        <script>
+        var highlightLayer;
+        function highlightFeature(e) {
+            highlightLayer = e.target;
+
+            if (e.target.feature.geometry.type === 'LineString') {
+              highlightLayer.setStyle({
+                color: '#ffff00',
+              });
+            } else {
+              highlightLayer.setStyle({
+                fillColor: '#ffff00',
+                fillOpacity: 1
+              });
+            }
+        }
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[6.618620160968266,-13.94339098081296],[10.492998110024935,-9.391474030812883]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+            map.setMaxBounds(map.getBounds());
+        }
+        map.createPane('pane_OSMStandard_0');
+        map.getPane('pane_OSMStandard_0').style.zIndex = 400;
+        var layer_OSMStandard_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_OSMStandard_0',
+            opacity: 1.0,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_OSMStandard_0;
+        map.addLayer(layer_OSMStandard_0);
+        map.createPane('pane_GoogleSatellite_1');
+        map.getPane('pane_GoogleSatellite_1').style.zIndex = 401;
+        var layer_GoogleSatellite_1 = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleSatellite_1',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+        });
+        layer_GoogleSatellite_1;
+        map.addLayer(layer_GoogleSatellite_1);
+        function pop_eastern_province_installations_2(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Region</th>\
+                        <td>' + (feature.properties['Region'] !== null ? autolinker.link(feature.properties['Region'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District</th>\
+                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Chiefdom</th>\
+                        <td>' + (feature.properties['Chiefdom'] !== null ? autolinker.link(feature.properties['Chiefdom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community</th>\
+                        <td>' + (feature.properties['Community'] !== null ? autolinker.link(feature.properties['Community'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Components of Facility</th>\
+                        <td>' + (feature.properties['Main compo'] !== null ? autolinker.link(feature.properties['Main compo'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Facility Name</th>\
+                        <td>' + (feature.properties['Facility N'] !== null ? autolinker.link(feature.properties['Facility N'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Installation Date</th>\
+                        <td>' + (feature.properties['Installati'] !== null ? autolinker.link(feature.properties['Installati'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Panel Capacity</th>\
+                        <td>' + (feature.properties['Panel Capa'] !== null ? autolinker.link(feature.properties['Panel Capa'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Installation Type</th>\
+                        <td>' + (feature.properties['Type of In'] !== null ? autolinker.link(feature.properties['Type of In'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">No. of Panels</th>\
+                        <td>' + (feature.properties['No of Pane'] !== null ? autolinker.link(feature.properties['No of Pane'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Latitude</th>\
+                        <td>' + (feature.properties['Latitude'] !== null ? autolinker.link(feature.properties['Latitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Longitude</th>\
+                        <td>' + (feature.properties['Longitude'] !== null ? autolinker.link(feature.properties['Longitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Elevation'] !== null ? autolinker.link(feature.properties['Elevation'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Site Pictu'] !== null ? autolinker.link(feature.properties['Site Pictu'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Accurac'] !== null ? autolinker.link(feature.properties['Accurac'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type full'] !== null ? autolinker.link(feature.properties['Type full'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_eastern_province_installations_2_0() {
+            return {
+                pane: 'pane_eastern_province_installations_2',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_eastern_province_installations_2');
+        map.getPane('pane_eastern_province_installations_2').style.zIndex = 402;
+        map.getPane('pane_eastern_province_installations_2').style['mix-blend-mode'] = 'normal';
+        var layer_eastern_province_installations_2 = new L.geoJson(json_eastern_province_installations_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_eastern_province_installations_2',
+            layerName: 'layer_eastern_province_installations_2',
+            pane: 'pane_eastern_province_installations_2',
+            onEachFeature: pop_eastern_province_installations_2,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_eastern_province_installations_2_0(feature));
+            },
+        });
+        var cluster_eastern_province_installations_2 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2});
+        cluster_eastern_province_installations_2.addLayer(layer_eastern_province_installations_2);
+
+        bounds_group.addLayer(layer_eastern_province_installations_2);
+        cluster_eastern_province_installations_2.addTo(map);
+        function pop_northern_province_installation_3(feature, layer) {
+            layer.on({
+                mouseout: function(e) {
+                    for (i in e.target._eventParents) {
+                        e.target._eventParents[i].resetStyle(e.target);
+                    }
+                },
+                mouseover: highlightFeature,
+            });
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2"><strong>Name</strong><br />' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Region</th>\
+                        <td>' + (feature.properties['Region'] !== null ? autolinker.link(feature.properties['Region'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">District</th>\
+                        <td>' + (feature.properties['District'] !== null ? autolinker.link(feature.properties['District'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Chiefdom</th>\
+                        <td>' + (feature.properties['Chiefdom'] !== null ? autolinker.link(feature.properties['Chiefdom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Community</th>\
+                        <td>' + (feature.properties['Community'] !== null ? autolinker.link(feature.properties['Community'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Main compo</th>\
+                        <td>' + (feature.properties['Main compo'] !== null ? autolinker.link(feature.properties['Main compo'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Facility N</th>\
+                        <td>' + (feature.properties['Facility N'] !== null ? autolinker.link(feature.properties['Facility N'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Installati</th>\
+                        <td>' + (feature.properties['Installati'] !== null ? autolinker.link(feature.properties['Installati'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Panel Capa</th>\
+                        <td>' + (feature.properties['Panel Capa'] !== null ? autolinker.link(feature.properties['Panel Capa'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Type of In</th>\
+                        <td>' + (feature.properties['Type of In'] !== null ? autolinker.link(feature.properties['Type of In'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">No of Pane</th>\
+                        <td>' + (feature.properties['No of Pane'] !== null ? autolinker.link(feature.properties['No of Pane'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Latitude</th>\
+                        <td>' + (feature.properties['Latitude'] !== null ? autolinker.link(feature.properties['Latitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Longitude</th>\
+                        <td>' + (feature.properties['Longitude'] !== null ? autolinker.link(feature.properties['Longitude'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Elevation'] !== null ? autolinker.link(feature.properties['Elevation'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Site Pictu'] !== null ? autolinker.link(feature.properties['Site Pictu'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Accurac'] !== null ? autolinker.link(feature.properties['Accurac'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Type full'] !== null ? autolinker.link(feature.properties['Type full'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_northern_province_installation_3_0() {
+            return {
+                pane: 'pane_northern_province_installation_3',
+                radius: 6.0,
+                opacity: 1,
+                color: 'rgba(255,255,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_northern_province_installation_3');
+        map.getPane('pane_northern_province_installation_3').style.zIndex = 403;
+        map.getPane('pane_northern_province_installation_3').style['mix-blend-mode'] = 'normal';
+        var layer_northern_province_installation_3 = new L.geoJson(json_northern_province_installation_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_northern_province_installation_3',
+            layerName: 'layer_northern_province_installation_3',
+            pane: 'pane_northern_province_installation_3',
+            onEachFeature: pop_northern_province_installation_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_northern_province_installation_3_0(feature));
+            },
+        });
+        var cluster_northern_province_installation_3 = new L.MarkerClusterGroup({showCoverageOnHover: false,
+            spiderfyDistanceMultiplier: 2});
+        cluster_northern_province_installation_3.addLayer(layer_northern_province_installation_3);
+
+        bounds_group.addLayer(layer_northern_province_installation_3);
+        cluster_northern_province_installation_3.addTo(map);
+        var osmGeocoder = new L.Control.Geocoder({
+            collapsed: true,
+            position: 'topleft',
+            text: 'Search',
+            title: 'Testing'
+        }).addTo(map);
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .className += ' fa fa-search';
+        document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
+        .title += 'Search for a place';
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'<img src="legend/northern_province_installation_3.png" /> northern_province_installation': cluster_northern_province_installation_3,'<img src="legend/eastern_province_installations_2.png" /> eastern_province_installations': cluster_eastern_province_installations_2,"Google Satellite": layer_GoogleSatellite_1,"OSM Standard": layer_OSMStandard_0,}).addTo(map);
+        setBounds();
+        resetLabels([layer_eastern_province_installations_2]);
+        map.on("zoomend", function(){
+            resetLabels([layer_eastern_province_installations_2]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_eastern_province_installations_2]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_eastern_province_installations_2]);
+        });
+        </script>
+    </body>
+</html>
