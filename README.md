@@ -4,9 +4,13 @@ A comprehensive collection of coursework and projects from my Computer Science d
 
 ## 📚 Repository Structure
 
-This archive is organized by programming language:
+This archive is organized by programming language and technology:
 
-- **[c/](c/)** - C Programming Language exercises and projects
+- **[c/](c/)** - C Programming Language exercises and foundational projects
+- **[python/](python/)** - Python projects and web framework learning
+- **[js/](js/)** - JavaScript projects and interactive applications
+- **[css/](css/)** - CSS and responsive design projects
+- **[gis/](gis/)** - Geographic Information Systems (GIS) and mapping projects
 
 ## 🔤 C Programming (`c/` folder)
 
@@ -111,6 +115,61 @@ Mohamed S Harding
 - Concepts build upon each other, reinforcing fundamental CS principles
 - This archive serves as a reference for foundational programming knowledge
 
+## � Python (`python/` folder)
+
+### Projects
+
+| Project | Description |
+|---------|-------------|
+| **learning-bottle-framework/** | Educational project for learning the Bottle web framework |
+
+---
+
+## 🌐 JavaScript (`js/` folder)
+
+### Projects
+
+| Project | Description |
+|---------|-------------|
+| **tips-calculator/** | Interactive tip calculator application |
+| **to-do-List/** | Task management to-do list application |
+
+---
+
+## 🎨 CSS (`css/` folder)
+
+### Projects
+
+| Project | Description |
+|---------|-------------|
+| **checkout-form/** | Responsive checkout form design |
+| **master-signup-form/** | Comprehensive user signup form |
+| **mini-css-library/** | Custom CSS utilities and component library |
+| **navbar/** | Navigation bar implementation |
+| **navbar-with-drop-down/** | Advanced navbar with dropdown menus |
+
+---
+
+## 🗺️ GIS - Geographic Information Systems (`gis/` folder)
+
+### Projects
+
+Geospatial analysis and web mapping projects:
+
+| Project | Description |
+|---------|-------------|
+| **freetown-settlements/** | Mapping and analysis of settlements in Freetown |
+| **health-facilities/** | Geographic data on health facilities |
+| **preesd-installations/** | Spatial data visualization of installations |
+| **web-map/** | Interactive web-based mapping application |
+
+---
+
 ## 🔗 Related
 
-For more information about each exercise, see [c/README.md](c/README.md)
+For more information about each language folder:
+- C Programming: [c/README.md](c/README.md)
+- Python: [python/](python/)
+- JavaScript: [js/](js/)
+- CSS: [css/](css/)
+- GIS: [gis/](gis/)

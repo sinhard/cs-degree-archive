@@ -1,0 +1,123 @@
+/*
+Author: Mohamed S Harding
+Description: Simple Credit Card Checkout Form
+*/
+@import 'responsive.css';
+body {
+    margin: 0%;
+    background-color: snow;
+    font-family: sans-serif;
+}
+
+.wrapper {
+    margin: 20%;
+}
+
+.row {
+    display: block;
+}
+
+.container {
+    display: block;
+}
+
+.checkout-form {
+    display: inline-block;
+    border: none;
+    background-color: rgb(27, 150, 233);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 2px 4px 20px #888;
+}
+
+fieldset {
+    color: yellow;
+}
+
+/* Inputs */
+
+input {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background-color: transparent;
+    outline: none;
+    padding: 0.8em;
+    margin-top: 1em;
+}
+
+#cvv {
+   
+}
+
+/* Labels */
+
+label[for=number] {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+}
+
+label[for=name] {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+}
+
+label[for=date] {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    text-align: center;
+}
+
+label[for=cvv] {
+    color: #fff;
+    font-size: 12px;
+    position: absolute;
+    margin-left: 1%;
+    text-align: center;
+}
+
+/* Classes */
+
+.button {
+    margin-top: 1em;
+}
+
+.card-name {
+    margin-top: 1em;
+}
+
+/* Placeholders */
+::placeholder {
+    color: #fff;
+    opacity: 1;
+}
+
+/* Buttons */
+.btn-primary {
+    padding: 3px 14px;
+    background-color: snow;
+    border-radius: 2px;
+}
+
+.btn-primary:hover {
+    background-color:  tomato;
+    border: none;
+    transition: 0.3ms;
+    color: #fff;
+    transition: 0.2ms
+    box-shadow: 2px 4px 10px #888;
+}
+
+a.btn-primary {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800px;
+    color: #000;
+    font-family: sans-serif;
+    text-align: center;
+    text-align: center;
+}

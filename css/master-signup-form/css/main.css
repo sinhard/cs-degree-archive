@@ -1,0 +1,120 @@
+        /**
+     * @Author: Mohamed S Harding
+     * @Title: Dummy User Registration Form
+     * @Client: Mohamed S Harding
+     */
+        /* Default */
+        
+        * {
+            padding: 0%;
+            margin: 0%;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: snow;
+            color: #fff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        p {
+            color: #ff592f;
+            font-size: 0.8rem;
+        }
+        
+        h2 {
+            color: #000;
+            text-align: left;
+            padding-top: 1rem;
+        }
+        
+        label {
+            color: #000;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            font-weight: 800%;
+        }
+        
+        input[type=text] {
+            width: 500px;
+            padding: 0.8rem;
+            margin: 10xp 0 22px 0;
+            border: 1.5px solid #ff592f;
+            background-color: transparent;
+            margin-bottom: 0.8rem;
+        }
+        
+        input[type=password] {
+            width: 500px;
+            padding: 0.8rem;
+            margin: 5xp 0 22px 0;
+            border: 1.5px solid #ff592f;
+            background-color: transparent;
+            margin-bottom: 0.8rem;
+        }
+        
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: snow;
+            outline: none;
+            color: #ff592f;
+        }
+        
+        input[type=text]::placeholder,
+        input[type=password]::placeholder {
+            color: grey;
+            font-size: 0.7rem;
+        }
+        
+        span.footer-info {
+            text-align: center;
+        }
+        
+        span.footer-info a {
+            text-decoration: none;
+            color: #ff592f;
+        }
+        /* Container */
+        
+        .container {
+            width: 500px;
+            margin: 20px auto;
+            margin-top: 5.0rem;
+        }
+        
+        .form {
+            background-color: transparent;
+        }
+        
+        .lead {
+            margin-top: 0.5rem;
+            margin-bottom: 0.8rem;
+            color: #000;
+        }
+        
+        .heading {
+            color: #fff;
+            width: 500px;
+        }
+        /* Images */
+        
+        img.logo {
+            height: 120px;
+            margin-left: 8rem;
+        }
+        /* Buttons */
+        
+        .btn-primary {
+            background-color: #ff592f;
+            border: none;
+            width: 500px;
+            padding: 0.8rem;
+            color: #fff;
+            margin-top: 0.7rem;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ff8667;
+            transition: 0.4s;
+            cursor: pointer;
+        }

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Checkout & Pay</title>
+
+  <link rel="stylesheet" href="css/main.css" >
+
+</head>
+<body>
+
+  <!-- Wrapper Starts-->
+  <div class="wrapper">
+    <div class="row">
+      <div class="container">
+        <form class="checkout-form" action="#">
+          <div class="pay-card">
+              <div class="card-digits">
+                <label for="number">Card Number</label>
+                <input type="text" size="4" placeholder="----">
+                <input type="text" size="4" placeholder="----">
+                <input type="text" size="4" placeholder="----">
+                <input type="text" size="4" placeholder="----">
+              </div>
+              <div class="card-name">
+                <!-- Card Fields -->
+                  <label for="name">Card Holder</label>
+                  <input type="text" placeholder="Mohamed S Harding">
+                  <label for="date">Valid Thru</label>
+                  <input type="text" size="4" placeholder="MM/YY">
+                  <label for="cvv">Cvv</label>
+                  <input id="cvv" type="text" size="3" placeholder="123">
+              </div>
+              <!-- Submit Button-->
+              <div class="button">
+                  <a class="btn-primary" href="#">Submit Payment</a>
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
