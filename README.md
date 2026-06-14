@@ -1,26 +1,24 @@
-# CS Degree Archive
+# Dev Notebook
 
-A comprehensive collection of coursework and projects from my Computer Science degree, showcasing programming fundamentals and practical implementations.
+A comprehensive portfolio showcasing both coursework from my Computer Science degree and practical development projects. This repository demonstrates my progression from foundational programming concepts to full-stack web applications, geographic information systems, and modern web technologies.
 
-## 📚 Repository Structure
+## 📚 Portfolio Domains
 
-This archive is organized by programming language and technology:
+This repository is organized by development domain and specialty area:
 
-- **[c/](c/)** - C Programming Language exercises and foundational projects
-- **[python/](python/)** - Python projects and web framework learning
-- **[js/](js/)** - JavaScript projects and interactive applications
-- **[css/](css/)** - CSS and responsive design projects
-- **[gis/](gis/)** - Geographic Information Systems (GIS) and mapping projects
+- **[Coursework & Fundamentals](#-coursework--fundamentals)** - Computer Science fundamentals (C Programming)
+- **[Web Development](#-web-development)** - Full-stack web applications, UI/UX, and frameworks
+- **[Geospatial Analysis & Mapping](#%EF%B8%8F-geospatial-analysis--mapping)** - GIS projects and geographic visualization
 
-## 🔤 C Programming (`c/` folder)
+## 🎓 Coursework & Fundamentals
 
-### Overview
+### C Programming
 
-C is the foundational language taught at the beginning of most Computer Science programs. This folder contains coursework required for learning C at university, along with mini-projects developed throughout the learning journey.
+C is the foundational language taught at the beginning of most Computer Science programs. This folder contains structured university coursework covering fundamental computer science concepts and programming principles.
 
-### Coursework Topics Covered
+#### Coursework Topics Covered
 
-The exercises in this folder cover essential C programming concepts:
+The exercises cover essential C programming concepts:
 
 1. Introduction to the Language
 2. Program Structure & Basic Syntax
@@ -38,7 +36,7 @@ The exercises in this folder cover essential C programming concepts:
 14. Variable Arguments & Memory Management
 15. Command Line Arguments
 
-### Exercises
+#### Exercises
 
 | File | Description |
 |------|-------------|
@@ -51,57 +49,113 @@ The exercises in this folder cover essential C programming concepts:
 | **Ex7.c** | Tabbed View Exercise - Demonstrates text formatting with tabs |
 | **Ex8.c** | Additional Exercise - Further practice with C concepts |
 
-### Main Program
+#### Main Program
 
 | File | Description |
 |------|-------------|
 | **Game.c** | Interactive menu program that runs all exercises above - Provides a unified interface to execute any exercise |
 
-### Learning Resources
+#### Getting Started with C
 
-This coursework is based on concepts from:
-- [TutorialsPoint - C Programming](https://www.tutorialspoint.com/cprogramming/index.htm)
-
-## 🚀 Getting Started
-
-### Prerequisites
-
+**Prerequisites:**
 - GCC compiler or any C compiler (e.g., `gcc`, `clang`)
 - Terminal/Command prompt
 
-### Compiling and Running
+**Compiling and Running:**
 
 To compile a single exercise:
-
 ```bash
 gcc -o Ex1 c/Ex1.c
 ./Ex1
 ```
 
 Or on Windows:
-
 ```bash
 gcc -o Ex1 c\Ex1.c
 Ex1.exe
 ```
 
 To compile and run the menu-based Game program:
-
 ```bash
 gcc -o Game c/Game.c
 ./Game
 ```
 
-## 📖 File Structure Details
+**Learning Resources:**
+- [TutorialsPoint - C Programming](https://www.tutorialspoint.com/cprogramming/index.htm)
+- [c/README.md](c/README.md) - Detailed exercise documentation
+
+---
+
+## 💻 Web Development
+
+This domain encompasses full-stack web applications, interactive user interfaces, and web frameworks. Projects demonstrate responsive design, form handling, and modern web technologies.
+
+### Frontend Development
+
+#### Interactive Applications
+| Project | Location | Technologies | Description |
+|---------|----------|---------------|-------------|
+| **Tips Calculator** | [js/tips-calculator/](js/tips-calculator/) | JavaScript, CSS | Interactive tip calculation tool with real-time computation |
+| **To-Do List** | [js/to-do-List/](js/to-do-List/) | JavaScript, CSS | Task management application with add/complete/delete functionality |
+
+#### UI Components & Design Systems
+| Project | Location | Technologies | Description |
+|---------|----------|---------------|-------------|
+| **Checkout Form** | [css/checkout-form/](css/checkout-form/) | HTML, CSS | Responsive checkout form with validation and styling |
+| **Master Signup Form** | [css/master-signup-form/](css/master-signup-form/) | HTML, CSS | Comprehensive user authentication forms (signup, login, password recovery) |
+| **Mini CSS Library** | [css/mini-css-library/](css/mini-css-library/) | HTML, CSS | Custom CSS utilities and reusable component library |
+| **Navigation Bars** | [css/navbar/](css/navbar/) | HTML, CSS | Multiple navbar implementations showcasing responsive design patterns |
+| **Navbar with Dropdown** | [css/navbar-with-drop-down/](css/navbar-with-drop-down/) | HTML, CSS | Advanced navigation with dropdown menu functionality |
+
+### Backend & Frameworks
+
+#### Python Web Framework
+| Project | Location | Technologies | Description |
+|---------|----------|---------------|-------------|
+| **Bottle Framework Learning** | [python/learning-bottle-framework/](python/learning-bottle-framework/) | Python, Bottle | Educational project exploring the lightweight Bottle web framework |
+
+---
+
+## 🗺️ Geospatial Analysis & Mapping
+
+Geographic Information Systems (GIS) projects showcasing web-based mapping, spatial data visualization, and geospatial analysis. These projects combine web technologies with geographic data.
+
+| Project | Location | Description |
+|---------|----------|-------------|
+| **Freetown Settlements** | [gis/freetown-settlements/](gis/freetown-settlements/) | Mapping and spatial analysis of settlements in Freetown |
+| **Health Facilities** | [gis/health-facilities/](gis/health-facilities/) | Geographic data visualization of health facilities and locations |
+| **PREESD Installations** | [gis/preesd-installations/](gis/preesd-installations/) | Spatial data visualization of installations and infrastructure |
+| **Web Map** | [gis/web-map/](gis/web-map/) | Interactive web-based mapping application |
+
+---
+
+## 📖 Project Organization
 
 ```
-cs-degree-archive/
+dev-notebook/
 ├── README.md (this file)
-├── cs-degree-archive.code-workspace
-└── c/
-    ├── README.md (detailed exercise documentation)
-    ├── Ex1.c through Ex8.c (individual exercises)
-    └── Game.c (menu-driven program)
+├── dev-notebook.code-workspace
+├── c/ (Coursework & Fundamentals)
+│   ├── README.md (detailed exercise documentation)
+│   ├── Ex1.c through Ex8.c (individual exercises)
+│   └── Game.c (menu-driven program)
+├── js/ (Web Development - Frontend)
+│   ├── tips-calculator/
+│   └── to-do-List/
+├── css/ (Web Development - UI Components)
+│   ├── checkout-form/
+│   ├── master-signup-form/
+│   ├── mini-css-library/
+│   ├── navbar/ (v1, v2, v3)
+│   └── navbar-with-drop-down/
+├── python/ (Web Development - Backend)
+│   └── learning-bottle-framework/
+└── gis/ (Geospatial Analysis & Mapping)
+    ├── freetown-settlements/
+    ├── health-facilities/
+    ├── preesd-installations/
+    └── web-map/
 ```
 
 ## 👨‍💻 Author
@@ -110,66 +164,8 @@ Mohamed S Harding
 
 ## 📝 Notes
 
-- Each exercise includes comments explaining the problem statement and solution
-- The exercises progress from basic input/output to more complex algorithmic thinking
-- Concepts build upon each other, reinforcing fundamental CS principles
-- This archive serves as a reference for foundational programming knowledge
-
-## � Python (`python/` folder)
-
-### Projects
-
-| Project | Description |
-|---------|-------------|
-| **learning-bottle-framework/** | Educational project for learning the Bottle web framework |
-
----
-
-## 🌐 JavaScript (`js/` folder)
-
-### Projects
-
-| Project | Description |
-|---------|-------------|
-| **tips-calculator/** | Interactive tip calculator application |
-| **to-do-List/** | Task management to-do list application |
-
----
-
-## 🎨 CSS (`css/` folder)
-
-### Projects
-
-| Project | Description |
-|---------|-------------|
-| **checkout-form/** | Responsive checkout form design |
-| **master-signup-form/** | Comprehensive user signup form |
-| **mini-css-library/** | Custom CSS utilities and component library |
-| **navbar/** | Navigation bar implementation |
-| **navbar-with-drop-down/** | Advanced navbar with dropdown menus |
-
----
-
-## 🗺️ GIS - Geographic Information Systems (`gis/` folder)
-
-### Projects
-
-Geospatial analysis and web mapping projects:
-
-| Project | Description |
-|---------|-------------|
-| **freetown-settlements/** | Mapping and analysis of settlements in Freetown |
-| **health-facilities/** | Geographic data on health facilities |
-| **preesd-installations/** | Spatial data visualization of installations |
-| **web-map/** | Interactive web-based mapping application |
-
----
-
-## 🔗 Related
-
-For more information about each language folder:
-- C Programming: [c/README.md](c/README.md)
-- Python: [python/](python/)
-- JavaScript: [js/](js/)
-- CSS: [css/](css/)
-- GIS: [gis/](gis/)
+- **Coursework & Fundamentals**: C programming exercises include detailed comments explaining problem statements and solutions, progressing from basic input/output to complex algorithmic thinking
+- **Web Development**: Full-stack web applications, interactive tools, and responsive UI components demonstrating modern web development practices
+- **Geospatial Analysis**: GIS projects showcase advanced web mapping and spatial data visualization capabilities
+- Each domain builds upon core CS principles while showcasing specialized expertise in different development areas
+- This repository serves as a comprehensive reference for my development journey and technical capabilities across multiple domains
