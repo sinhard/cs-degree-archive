@@ -6,15 +6,20 @@ A comprehensive portfolio showcasing both coursework from my Computer Science de
 
 This repository is organized by development domain and specialty area:
 
-- **[Coursework & Fundamentals](#-coursework--fundamentals)** - Computer Science fundamentals (C Programming)
+- **[CS Coursework & Fundamentals](#-cs-coursework--fundamentals)** - Computer Science fundamentals (C Programming)
+- **[Data Structures & Algorithms](#-data-structures--algorithms)** - Core algorithmic concepts and data structure implementations
+- **[Embedded Systems](#-embedded-systems)** - Low-level programming and hardware-focused development
 - **[Web Development](#-web-development)** - Full-stack web applications, UI/UX, and frameworks
-- **[Geospatial Analysis & Mapping](#%EF%B8%8F-geospatial-analysis--mapping)** - GIS projects and geographic visualization
+- **[Geospatial Analysis & Mapping](#️-geospatial-analysis--mapping)** - GIS projects and geographic visualization
+- **[Automation Scripts](#-automation-scripts)** - Utility scripts and automation tools
 
-## 🎓 Coursework & Fundamentals
+## 🎓 CS Coursework & Fundamentals
 
 ### C Programming
 
 C is the foundational language taught at the beginning of most Computer Science programs. This folder contains structured university coursework covering fundamental computer science concepts and programming principles.
+
+**Location:** [cs-coursework-fundamentals/c/](cs-coursework-fundamentals/c/)
 
 #### Coursework Topics Covered
 
@@ -65,25 +70,25 @@ The exercises cover essential C programming concepts:
 
 To compile a single exercise:
 ```bash
-gcc -o Ex1 c/Ex1.c
+gcc -o Ex1 cs-coursework-fundamentals/c/Ex1.c
 ./Ex1
 ```
 
 Or on Windows:
 ```bash
-gcc -o Ex1 c\Ex1.c
+gcc -o Ex1 cs-coursework-fundamentals\c\Ex1.c
 Ex1.exe
 ```
 
 To compile and run the menu-based Game program:
 ```bash
-gcc -o Game c/Game.c
+gcc -o Game cs-coursework-fundamentals/c/Game.c
 ./Game
 ```
 
 **Learning Resources:**
 - [TutorialsPoint - C Programming](https://www.tutorialspoint.com/cprogramming/index.htm)
-- [c/README.md](c/README.md) - Detailed exercise documentation
+- [cs-coursework-fundamentals/c/README.md](cs-coursework-fundamentals/c/README.md) - Detailed exercise documentation
 
 ---
 
@@ -91,29 +96,49 @@ gcc -o Game c/Game.c
 
 This domain encompasses full-stack web applications, interactive user interfaces, and web frameworks. Projects demonstrate responsive design, form handling, and modern web technologies.
 
+**Location:** [web-development/](web-development/)
+
 ### Frontend Development
 
 #### Interactive Applications
 | Project | Location | Technologies | Description |
 |---------|----------|---------------|-------------|
-| **Tips Calculator** | [js/tips-calculator/](js/tips-calculator/) | JavaScript, CSS | Interactive tip calculation tool with real-time computation |
-| **To-Do List** | [js/to-do-List/](js/to-do-List/) | JavaScript, CSS | Task management application with add/complete/delete functionality |
+| **Tips Calculator** | [web-development/frontend-dev/tips-calculator/](web-development/frontend-dev/tips-calculator/) | JavaScript, CSS | Interactive tip calculation tool with real-time computation |
+| **To-Do List** | [web-development/frontend-dev/to-do-List/](web-development/frontend-dev/to-do-List/) | JavaScript, CSS | Task management application with add/complete/delete functionality |
 
-#### UI Components & Design Systems
+### UI Components & Design Systems
+
+#### Responsive Forms & Components
 | Project | Location | Technologies | Description |
 |---------|----------|---------------|-------------|
-| **Checkout Form** | [css/checkout-form/](css/checkout-form/) | HTML, CSS | Responsive checkout form with validation and styling |
-| **Master Signup Form** | [css/master-signup-form/](css/master-signup-form/) | HTML, CSS | Comprehensive user authentication forms (signup, login, password recovery) |
-| **Mini CSS Library** | [css/mini-css-library/](css/mini-css-library/) | HTML, CSS | Custom CSS utilities and reusable component library |
-| **Navigation Bars** | [css/navbar/](css/navbar/) | HTML, CSS | Multiple navbar implementations showcasing responsive design patterns |
-| **Navbar with Dropdown** | [css/navbar-with-drop-down/](css/navbar-with-drop-down/) | HTML, CSS | Advanced navigation with dropdown menu functionality |
+| **Checkout Form** | [web-development/ui-components-design-systems/checkout-form/](web-development/ui-components-design-systems/checkout-form/) | HTML, CSS | Responsive checkout form with validation and styling |
+| **Master Signup Form** | [web-development/ui-components-design-systems/master-signup-form/](web-development/ui-components-design-systems/master-signup-form/) | HTML, CSS | Comprehensive user authentication forms (signup, login, password recovery) |
+| **Mini CSS Library** | [web-development/ui-components-design-systems/mini-css-library/](web-development/ui-components-design-systems/mini-css-library/) | HTML, CSS | Custom CSS utilities and reusable component library |
+| **Navigation Bars** | [web-development/ui-components-design-systems/navbar/](web-development/ui-components-design-systems/navbar/) | HTML, CSS | Multiple navbar implementations showcasing responsive design patterns |
+| **Navbar with Dropdown** | [web-development/ui-components-design-systems/navbar-with-drop-down/](web-development/ui-components-design-systems/navbar-with-drop-down/) | HTML, CSS | Advanced navigation with dropdown menu functionality |
 
 ### Backend & Frameworks
 
 #### Python Web Framework
 | Project | Location | Technologies | Description |
 |---------|----------|---------------|-------------|
-| **Bottle Framework Learning** | [python/learning-bottle-framework/](python/learning-bottle-framework/) | Python, Bottle | Educational project exploring the lightweight Bottle web framework |
+| **Bottle Framework Learning** | [web-development/backend-dev-frameworks/learning-bottle-framework/](web-development/backend-dev-frameworks/learning-bottle-framework/) | Python, Bottle | Educational project exploring the lightweight Bottle web framework |
+
+---
+
+## 🏗️ Data Structures & Algorithms
+
+Core data structure implementations and algorithmic problem-solving exercises.
+
+**Location:** [data-structure-algorithms/](data-structure-algorithms/)
+
+---
+
+## 🔌 Embedded Systems
+
+Low-level programming, microcontroller projects, and hardware-focused development.
+
+**Location:** [embedded-systems/](embedded-systems/)
 
 ---
 
@@ -121,14 +146,22 @@ This domain encompasses full-stack web applications, interactive user interfaces
 
 Geographic Information Systems (GIS) projects showcasing web-based mapping, spatial data visualization, and geospatial analysis. These projects combine web technologies with geographic data.
 
+**Location:** [geospatial-analysis-mapping/](geospatial-analysis-mapping/)
+
 | Project | Location | Description |
 |---------|----------|-------------|
-| **Freetown Settlements** | [gis/freetown-settlements/](gis/freetown-settlements/) | Mapping and spatial analysis of settlements in Freetown |
-| **Health Facilities** | [gis/health-facilities/](gis/health-facilities/) | Geographic data visualization of health facilities and locations |
-| **PREESD Installations** | [gis/preesd-installations/](gis/preesd-installations/) | Spatial data visualization of installations and infrastructure |
-| **Web Map** | [gis/web-map/](gis/web-map/) | Interactive web-based mapping application |
+| **Freetown Settlements** | [geospatial-analysis-mapping/freetown-settlements/](geospatial-analysis-mapping/freetown-settlements/) | Mapping and spatial analysis of settlements in Freetown |
+| **Health Facilities** | [geospatial-analysis-mapping/health-facilities/](geospatial-analysis-mapping/health-facilities/) | Geographic data visualization of health facilities and locations |
+| **PREESD Installations** | [geospatial-analysis-mapping/preesd-installations/](geospatial-analysis-mapping/preesd-installations/) | Spatial data visualization of installations and infrastructure |
+| **Web Map** | [geospatial-analysis-mapping/web-map/](geospatial-analysis-mapping/web-map/) | Interactive web-based mapping application |
 
 ---
+
+## 🤖 Automation Scripts
+
+Utility scripts and automation tools for development and data processing tasks.
+
+**Location:** [automation-scripts/](automation-scripts/)
 
 ## 📖 Project Organization
 
@@ -136,26 +169,31 @@ Geographic Information Systems (GIS) projects showcasing web-based mapping, spat
 dev-notebook/
 ├── README.md (this file)
 ├── dev-notebook.code-workspace
-├── c/ (Coursework & Fundamentals)
-│   ├── README.md (detailed exercise documentation)
-│   ├── Ex1.c through Ex8.c (individual exercises)
-│   └── Game.c (menu-driven program)
-├── js/ (Web Development - Frontend)
-│   ├── tips-calculator/
-│   └── to-do-List/
-├── css/ (Web Development - UI Components)
-│   ├── checkout-form/
-│   ├── master-signup-form/
-│   ├── mini-css-library/
-│   ├── navbar/ (v1, v2, v3)
-│   └── navbar-with-drop-down/
-├── python/ (Web Development - Backend)
-│   └── learning-bottle-framework/
-└── gis/ (Geospatial Analysis & Mapping)
-    ├── freetown-settlements/
-    ├── health-facilities/
-    ├── preesd-installations/
-    └── web-map/
+├── cs-coursework-fundamentals/ (CS Coursework & Fundamentals)
+│   └── c/
+│       ├── README.md (detailed exercise documentation)
+│       ├── Ex1.c through Ex8.c (individual exercises)
+│       └── Game.c (menu-driven program)
+├── web-development/ (Web Development)
+│   ├── frontend-dev/
+│   │   ├── tips-calculator/
+│   │   └── to-do-List/
+│   ├── ui-components-design-systems/
+│   │   ├── checkout-form/
+│   │   ├── master-signup-form/
+│   │   ├── mini-css-library/
+│   │   ├── navbar/ (v1, v2, v3)
+│   │   └── navbar-with-drop-down/
+│   └── backend-dev-frameworks/
+│       └── learning-bottle-framework/
+├── data-structure-algorithms/ (Data Structures & Algorithms)
+├── embedded-systems/ (Embedded Systems)
+├── geospatial-analysis-mapping/ (Geospatial Analysis & Mapping)
+│   ├── freetown-settlements/
+│   ├── health-facilities/
+│   ├── preesd-installations/
+│   └── web-map/
+└── automation-scripts/ (Automation Scripts)
 ```
 
 ## 👨‍💻 Author
@@ -164,8 +202,11 @@ Mohamed S Harding
 
 ## 📝 Notes
 
-- **Coursework & Fundamentals**: C programming exercises include detailed comments explaining problem statements and solutions, progressing from basic input/output to complex algorithmic thinking
-- **Web Development**: Full-stack web applications, interactive tools, and responsive UI components demonstrating modern web development practices
+- **CS Coursework & Fundamentals**: C programming exercises include detailed comments explaining problem statements and solutions, progressing from basic input/output to complex algorithmic thinking
+- **Data Structures & Algorithms**: Core implementations and algorithm explorations demonstrating computer science principles
+- **Embedded Systems**: Low-level programming and hardware-focused projects
+- **Web Development**: Full-stack web applications, interactive tools, and responsive UI components demonstrating modern web development practices across frontend, backend, and UI design
 - **Geospatial Analysis**: GIS projects showcase advanced web mapping and spatial data visualization capabilities
+- **Automation Scripts**: Utility and automation tools for various development tasks
 - Each domain builds upon core CS principles while showcasing specialized expertise in different development areas
 - This repository serves as a comprehensive reference for my development journey and technical capabilities across multiple domains
